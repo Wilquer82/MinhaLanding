@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fox Tail Consultoria | Sistemas e Consultoria para Empresas</title>
-  <meta name="description" content="PDV, ERP, Agenda para prestadores de serviços, Dashboard e Consultoria Administrativa. Soluções práticas para o seu negócio crescer com organização.">
+  <title>Fox Tail Consultoria | Sistemas, Dashboard e Soluções para Contadores</title>
+  <meta name="description" content="PDV, ERP, Agenda, Dashboard, Consultoria Administrativa e ferramentas de Reforma Tributária para escritórios contábeis.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
       --accent-dark: #ea580c;
       --light: #f8fafc;
       --gray: #64748b;
-      --white: #ffffff;
+      --whatsapp: #25D366;
       --shadow: 0 10px 30px -5px rgba(0,0,0,0.08);
       --radius: 16px;
     }
@@ -42,6 +42,12 @@
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     .animate {
@@ -117,14 +123,14 @@
 
     /* Hero */
     .hero {
-      padding: 140px 24px 90px;
+      padding: 140px 24px 80px;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: clamp(2.3rem, 5.5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5.2vw, 3.4rem);
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 20px;
@@ -138,10 +144,10 @@
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--gray);
       margin-bottom: 36px;
-      max-width: 650px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -189,16 +195,14 @@
       color: var(--accent);
     }
 
-    /* Solutions */
-    .solutions {
-      padding: 40px 24px 90px;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* Sections */
+    .section {
+      padding: 80px 24px;
     }
 
     .section-header {
       text-align: center;
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto 50px;
     }
 
@@ -213,13 +217,15 @@
       font-size: 1.15rem;
     }
 
-    .solutions-grid {
+    .grid {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
 
-    .solution-card {
+    .card {
       background: white;
       border-radius: var(--radius);
       padding: 32px 28px;
@@ -229,13 +235,13 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
-    .solution-card:hover {
+    .card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow);
       border-color: #fed7aa;
     }
 
-    .solution-icon {
+    .card-icon {
       width: 54px;
       height: 54px;
       background: linear-gradient(135deg, #ffedd5, #fed7aa);
@@ -247,99 +253,31 @@
       margin-bottom: 20px;
     }
 
-    .solution-card h3 {
+    .card h3 {
       font-size: 1.25rem;
       margin-bottom: 10px;
       font-weight: 700;
     }
 
-    .solution-card p {
+    .card p {
       color: var(--gray);
       font-size: 0.98rem;
     }
 
-    /* Benefits */
-    .benefits {
+    /* Contadores section highlight */
+    .contadores {
       background: white;
-      padding: 90px 24px;
     }
 
-    .benefits-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .benefits-content h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.3rem);
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .benefits-content p {
-      color: var(--gray);
-      margin-bottom: 28px;
-      font-size: 1.1rem;
-    }
-
-    .benefit-list {
-      list-style: none;
-    }
-
-    .benefit-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 16px;
-      font-size: 1.05rem;
-    }
-
-    .benefit-list li::before {
-      content: "✓";
-      background: #dcfce7;
-      color: #166534;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
+    .badge {
+      display: inline-block;
+      background: #ffedd5;
+      color: #c2410c;
+      font-size: 0.8rem;
       font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .benefits-visual {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-radius: 24px;
-      padding: 40px 32px;
-      color: white;
-      animation: float 7s ease-in-out infinite;
-    }
-
-    .benefits-visual h3 {
-      font-size: 1.3rem;
-      margin-bottom: 24px;
-    }
-
-    .stat {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .stat:last-child {
-      border-bottom: none;
-    }
-
-    .stat span:last-child {
-      font-weight: 700;
-      color: #fdba74;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
     }
 
     /* CTA */
@@ -357,10 +295,23 @@
     }
 
     .cta p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       opacity: 0.85;
-      max-width: 580px;
-      margin: 0 auto 36px;
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-email {
+      display: block;
+      color: #fdba74;
+      font-weight: 600;
+      margin-bottom: 28px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .cta-email:hover {
+      text-decoration: underline;
     }
 
     .cta .btn-primary {
@@ -382,18 +333,39 @@
       color: white;
     }
 
-    /* Mobile */
-    @media (max-width: 900px) {
-      .benefits-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .benefits-visual {
-        order: -1;
-      }
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse 2.5s infinite;
     }
 
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    /* Mobile */
     @media (max-width: 600px) {
       .header-inner {
         padding: 14px 18px;
@@ -413,9 +385,16 @@
         justify-content: center;
       }
 
-      .solutions, .benefits, .cta {
+      .section, .cta {
         padding-left: 18px;
         padding-right: 18px;
+      }
+
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
       }
     }
   </style>
@@ -429,137 +408,136 @@
         <div class="logo-icon">FT</div>
         Fox Tail Consultoria
       </a>
-      <a href="#contato" class="nav-cta">Falar com especialista</a>
+      <a href="#contato" class="nav-cta">Falar conosco</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <h1 class="animate">Sistemas e consultoria para sua empresa <span>crescer com organização</span></h1>
+    <h1 class="animate">Sistemas, Dashboard e soluções para <span>empresas e contadores</span></h1>
     <p class="animate delay-1">
-      PDV, ERP, Agenda para prestadores de serviços, Dashboard e Consultoria Administrativa. 
-      Tudo que você precisa para profissionalizar a gestão do seu negócio.
+      PDV, ERP, Agenda, Dashboard, Consultoria Administrativa e ferramentas especializadas de Reforma Tributária para escritórios contábeis.
     </p>
     <div class="hero-buttons animate delay-2">
-      <a href="#contato" class="btn-primary">Quero uma proposta →</a>
-      <a href="#solucoes" class="btn-secondary">Conhecer soluções</a>
+      <a href="#contato" class="btn-primary">Solicitar proposta →</a>
+      <a href="#solucoes" class="btn-secondary">Ver soluções</a>
     </div>
   </section>
 
-  <!-- Solutions -->
-  <section class="solutions" id="solucoes">
+  <!-- Soluções Gerais -->
+  <section class="section" id="solucoes">
     <div class="section-header">
-      <h2 class="animate">Nossas soluções</h2>
-      <p class="animate delay-1">Ferramentas práticas e consultoria especializada para diferentes tipos de negócios.</p>
+      <h2 class="animate">Soluções para empresas</h2>
+      <p class="animate delay-1">Ferramentas práticas para organizar e profissionalizar a gestão do seu negócio.</p>
     </div>
 
-    <div class="solutions-grid">
-      <!-- PDV -->
-      <div class="solution-card animate delay-1">
-        <div class="solution-icon">🛒</div>
+    <div class="grid">
+      <div class="card animate delay-1">
+        <div class="card-icon">🛒</div>
         <h3>PDV</h3>
-        <p>
-          Sistema de frente de caixa completo, rápido e fácil de usar. 
-          Controle de vendas, estoque, formas de pagamento e emissão de notas.
-        </p>
+        <p>Sistema de frente de caixa completo. Vendas, estoque, pagamentos e emissão de notas de forma rápida e simples.</p>
       </div>
 
-      <!-- ERP -->
-      <div class="solution-card animate delay-2">
-        <div class="solution-icon">🏗️</div>
+      <div class="card animate delay-2">
+        <div class="card-icon">🏗️</div>
         <h3>ERP</h3>
-        <p>
-          Gestão integrada para empresas e construtoras. 
-          Controle financeiro, estoque, obras, custos e relatórios em um só lugar.
-        </p>
+        <p>Gestão integrada para empresas e construtoras. Financeiro, estoque, obras, custos e relatórios em um só lugar.</p>
       </div>
 
-      <!-- Agenda -->
-      <div class="solution-card animate delay-3">
-        <div class="solution-icon">📅</div>
-        <h3>Agenda para Prestadores de Serviços</h3>
-        <p>
-          Organize horários, clientes e atendimentos. 
-          Ideal para profissionais liberais, clínicas, salões e prestadores de serviço.
-        </p>
+      <div class="card animate delay-3">
+        <div class="card-icon">📅</div>
+        <h3>Agenda para Prestadores</h3>
+        <p>Organize horários, clientes e atendimentos. Ideal para profissionais liberais, clínicas, salões e serviços.</p>
       </div>
 
-      <!-- Dashboard -->
-      <div class="solution-card animate delay-4">
-        <div class="solution-icon">📊</div>
+      <div class="card animate delay-4">
+        <div class="card-icon">📊</div>
         <h3>Dashboard</h3>
-        <p>
-          Painel visual com os principais indicadores do seu negócio. 
-          Acompanhe resultados em tempo real e tome decisões com mais segurança.
-        </p>
+        <p>Painel visual com os principais indicadores do negócio. Acompanhe resultados e tome decisões com mais segurança.</p>
       </div>
 
-      <!-- Consultoria -->
-      <div class="solution-card animate delay-5">
-        <div class="solution-icon">💼</div>
+      <div class="card animate delay-5">
+        <div class="card-icon">💼</div>
         <h3>Consultoria Administrativa</h3>
-        <p>
-          Apoio especializado para organizar processos, melhorar a gestão 
-          e preparar sua empresa para crescer de forma sustentável.
-        </p>
+        <p>Apoio especializado para organizar processos, melhorar a gestão e preparar a empresa para crescer.</p>
       </div>
     </div>
   </section>
 
-  <!-- Benefits -->
-  <section class="benefits">
-    <div class="benefits-inner">
-      <div class="benefits-content">
-        <h2 class="animate">Por que escolher a Fox Tail?</h2>
-        <p class="animate delay-1">
-          Unimos sistemas práticos com consultoria real. 
-          Não entregamos apenas software — ajudamos sua empresa a usar a ferramenta da forma certa.
-        </p>
-        <ul class="benefit-list">
-          <li class="animate delay-2">Sistemas desenvolvidos sob medida para a realidade brasileira</li>
-          <li class="animate delay-3">Implementação acompanhada e suporte próximo</li>
-          <li class="animate delay-4">Consultoria administrativa para organizar processos</li>
-          <li class="animate delay-5">Foco em resultado: mais controle, menos retrabalho</li>
-        </ul>
+  <!-- Soluções para Contadores -->
+  <section class="section contadores" id="contadores">
+    <div class="section-header">
+      <h2 class="animate">Soluções para Contadores</h2>
+      <p class="animate delay-1">Ferramentas de Reforma Tributária desenvolvidas para escritórios contábeis que querem entregar mais valor e gerar nova receita.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card animate delay-1">
+        <div class="badge">Reforma Tributária</div>
+        <div class="card-icon">📈</div>
+        <h3>Simulador de Impacto IBS/CBS</h3>
+        <p>Mostre em segundos o impacto da reforma na margem, preço e fluxo de caixa do cliente. Ideal para reuniões de planejamento.</p>
       </div>
 
-      <div class="benefits-visual animate delay-2">
-        <h3>O que nossos clientes conquistam</h3>
-        <div class="stat">
-          <span>Controle financeiro</span>
-          <span>Clareza total</span>
-        </div>
-        <div class="stat">
-          <span>Organização operacional</span>
-          <span>Processos definidos</span>
-        </div>
-        <div class="stat">
-          <span>Tomada de decisão</span>
-          <span>Baseada em dados</span>
-        </div>
-        <div class="stat">
-          <span>Tempo da equipe</span>
-          <span>Mais produtividade</span>
-        </div>
+      <div class="card animate delay-2">
+        <div class="badge">White-label</div>
+        <div class="card-icon">📄</div>
+        <h3>Diagnóstico White-label</h3>
+        <p>Gere relatórios profissionais com a marca do seu escritório. Posicione-se como especialista e abra porta para consultoria.</p>
+      </div>
+
+      <div class="card animate delay-3">
+        <div class="badge">Validação</div>
+        <div class="card-icon">✅</div>
+        <h3>Motor de Cálculo + Validador</h3>
+        <p>Valide notas com os novos campos de IBS e CBS e calcule o tributo devido com precisão, respeitando as regras de transição.</p>
+      </div>
+
+      <div class="card animate delay-4">
+        <div class="badge">Créditos</div>
+        <div class="card-icon">🔍</div>
+        <h3>Auditoria de Créditos</h3>
+        <p>Identifique créditos aproveitáveis, riscos de glosa e inconsistências entre notas de entrada e saída.</p>
+      </div>
+
+      <div class="card animate delay-5">
+        <div class="badge">Precificação</div>
+        <div class="card-icon">💰</div>
+        <h3>Precificação Inteligente</h3>
+        <p>Calcule o preço ideal considerando quem toma crédito e quem não toma. Ajude o cliente a proteger a margem.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA Final -->
   <section class="cta" id="contato">
-    <h2 class="animate">Pronto para profissionalizar a gestão da sua empresa?</h2>
+    <h2 class="animate">Vamos conversar sobre a melhor solução para o seu negócio?</h2>
     <p class="animate delay-1">
-      Fale com a Fox Tail Consultoria e receba uma proposta personalizada para o seu negócio.
+      Entre em contato e receba uma proposta personalizada.
     </p>
-    <a href="mailto:contato@foxtail.com.br" class="btn-primary animate delay-2">
-      Solicitar proposta
+    <a href="mailto:fox.tail.cons@gmail.com" class="cta-email animate delay-2">
+      fox.tail.cons@gmail.com
+    </a>
+    <a href="https://wa.me/5519982340763" target="_blank" class="btn-primary animate delay-3">
+      Falar no WhatsApp
     </a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 <strong>Fox Tail Consultoria</strong>. Todos os direitos reservados.</p>
+    <p>© 2026 <strong>Fox Tail Consultoria</strong> · fox.tail.cons@gmail.com</p>
   </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5519982340763" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.004 0C7.248 0 .1 7.147.1 15.902c0 2.812.74 5.555 2.145 7.97L.1 32l8.3-2.175a15.87 15.87 0 0 0 7.604 1.94c8.756 0 15.902-7.147 15.902-15.902C31.906 7.147 24.76 0 16.004 0zm0 29.14a13.18 13.18 0 0 1-6.72-1.84l-.48-.285-4.94 1.295 1.32-4.815-.315-.495a13.15 13.15 0 0 1-2.02-7.01c0-7.27 5.917-13.185 13.19-13.185 7.27 0 13.185 5.915 13.185 13.185 0 7.273-5.915 13.19-13.185 13.19zm7.24-9.88c-.395-.198-2.34-1.155-2.705-1.287-.364-.132-.63-.198-.895.198-.264.395-1.025 1.287-1.257 1.55-.23.264-.462.297-.857.1-.395-.198-1.67-.615-3.18-1.96-1.175-1.05-1.97-2.345-2.2-2.74-.23-.395-.025-.608.173-.805.178-.177.395-.462.593-.693.198-.23.264-.395.395-.66.132-.264.066-.495-.033-.693-.1-.198-.895-2.155-1.227-2.95-.323-.773-.65-.668-.895-.68-.23-.013-.495-.016-.76-.016s-.693.1-1.056.495c-.364.395-1.387 1.355-1.387 3.305s1.42 3.83 1.618 4.095c.198.264 2.795 4.265 6.77 5.98  .945.408 1.683.65 2.26.832.95.3 1.815.258 2.5.156.762-.113 2.34-.956 2.67-1.88.33-.924.33-1.716.23-1.88-.098-.165-.362-.264-.757-.462z"/>
+    </svg>
+  </a>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
